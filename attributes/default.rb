@@ -3,7 +3,9 @@
 # Attributes:: default
 #
 
-include_attribute "apache2"
+if node['apache']
+  include_attribute "apache2"
+end
 
 default['graphite']['version'] = "0.9.10"
 default['graphite']['password'] = "change_me"
