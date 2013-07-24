@@ -41,8 +41,15 @@ default['graphite']['web']['carbonlink_hosts'] = []
 default['graphite']['web']['memcached_hosts'] = ['127.0.0.1:11211']
 
 default['graphite']['web_server'] = 'apache'
-default['graphite']['user_account'] = node['apache']['user']
-default['graphite']['group_account'] = node['apache']['group']
+
+if node['apache']
+  default['graphite']['user_account'] = node['apache']['user']
+  default['graphite']['group_account'] = node['apache']['group']
+else
+  default['graphite']['user_account'] = "change_me"
+  default['graphite']['group_account'] = "change_me"
+end
+
 default['graphite']['create_user'] = false
 
 default['graphite']['ssl']['enabled'] = false
