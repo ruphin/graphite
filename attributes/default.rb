@@ -16,6 +16,7 @@ default['graphite']['listen_port'] = 80
 default['graphite']['base_dir'] = "/opt/graphite"
 default['graphite']['doc_root'] = "/opt/graphite/webapp"
 default['graphite']['storage_dir'] = "/opt/graphite/storage"
+default['graphite']['log_dir'] = "/opt/graphite/storage/log"
 default['graphite']['timezone'] = "America/Los_Angeles"
 default['graphite']['django_root'] = "@DJANGO_ROOT@"
 
